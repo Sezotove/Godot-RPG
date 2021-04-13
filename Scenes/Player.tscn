@@ -1,0 +1,109 @@
+[gd_scene load_steps=40 format=2]
+
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot right1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk left4.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk up3.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Character with pistol/idle/idle down1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Character with pistol/idle/idle down3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk right2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk up2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Character with pistol/idle/idle down2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk up4.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk up1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk right4.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Character with pistol/idle/idle down4.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk down1.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk left2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk left3.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk right1.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk down4.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk down3.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk left1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk right3.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Character with pistol/walk/walk down2.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot right4.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot right3.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot right2.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot down3.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot left4.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot left2.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot down4.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot up2.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot up1.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot left1.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot up4.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot left3.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot down2.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot up3.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Character with pistol/attack/shoot down1.png" type="Texture" id=37]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 37 ), ExtResource( 35 ), ExtResource( 26 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "AttackDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 21 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "WalkRight",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "WalkLeft",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 28 ), ExtResource( 34 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "AttackLeft",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 30 ), ExtResource( 36 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "AttackUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "AttackRight",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "WalkDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "WalkUp",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 2.5434
+height = 5.48115
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Players",
+]]
+position = Vector2( 0.530331, -0.353554 )
+collision_layer = 2147483650
+collision_mask = 7
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "AttackDown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.393715, 10.5543 )
+rotation = 1.5708
+shape = SubResource( 2 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
