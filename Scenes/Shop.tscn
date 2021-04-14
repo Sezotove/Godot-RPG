@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Shop.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Shop.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/ShopEntrance.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 45.9018, 38.7471 )
+
+[sub_resource type="SegmentShape2D" id=2]
+a = Vector2( 0.0567245, -0.197769 )
+b = Vector2( -0.120049, 23.1368 )
+
+[node name="ShopExterior" type="StaticBody2D"]
+collision_mask = 7
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.290424, 10.3427 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2( -0.408509, -3.51886 )
+scale = Vector2( 1.03511, 1.05814 )
+polygon = PoolVector2Array( -43.8716, -23.4493, 43.7364, -24.0166, 2.74548, -50.5377 )
+
+[node name="Entrance" type="Area2D" parent="."]
+position = Vector2( 13.0815, 52.3259 )
+rotation = 1.5708
+script = ExtResource( 3 )
+
+[node name="Entrance" type="CollisionShape2D" parent="Entrance"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Entrance" to="Entrance" method="_on_Entrance_body_entered"]

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/start.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Exit.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=3]
+[ext_resource path="res://Action RPG Resources/World/GrassBackground.png" type="Texture" id=4]
+
+[node name="StartScreen" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 320, 184 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 637.99, 369.663 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Start" type="TextureButton" parent="."]
+margin_left = 224.0
+margin_top = 80.0
+margin_right = 424.0
+margin_bottom = 160.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 224.0
+margin_top = 192.0
+margin_right = 424.0
+margin_bottom = 272.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Start" to="." method="_on_Start_button_down"]
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
